@@ -43652,7 +43652,12 @@ function getInputValue(){
   document.getElementById("demo2").innerHTML =`Farm ID :  ${farmID}`;
   document.getElementById("demo3").innerHTML =`Farm Location :  ${region} , ${country}`;
   document.getElementById("demo4").innerHTML =`Farm Postcode region : ${postcode}`;
-  
+  var map = L.map('map').setView([Latitude, Longitude], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+      maxZoom: 18
+    }).addTo(map);
+    L.marker([Latitude,Longitude]).addTo(map);
   
 
 }
